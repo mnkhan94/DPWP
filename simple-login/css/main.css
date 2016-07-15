@@ -1,7 +1,14 @@
 @charset "utf-8";
 
+html { 
+  background: url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=c2447a69043e39f174216c5440f0fb2d") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
-	background: #eaeaea;
 	color: #999;
 	font: 100%/1.5em sans-serif;
 	margin: 0;
@@ -125,4 +132,26 @@ input[type="submit"] { cursor: pointer; }
 	margin: 0 10px 0 0;
 	text-align: center;
 	width: 20px;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  /* Hides the default checkbox style */
+  height: 1.618em;
+  width: 1.618em;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+
+  border: 0.382em solid #d7d3d2;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: .15s;
+  border-radius: 2em;
+  background-color: #d7d3d2;
 }

@@ -26,10 +26,27 @@ class MainHandler(webapp2.RequestHandler): #declaring a class
         <form method="GET">
         <input type="text" name="user" placeholder="Name" />
         <input type="email" name="email" placeholder="Email"/>
+         <br><br>
+                    <label>Element Type: </label><select name="pizzaType">
+                    <option value="Water Bender">Water Bender</option>
+                    <option value="Air Bender">Air Bender</option>
+                    <option value="Fire Bender">Fire Bender</option>
+                    <option value="Earth Bender">Earth Bender</option>
+                    </select>
+                    <br><br>
+                    <label>Select Gender: </label> <br>
+                    <form>
+  <input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other
+  </form>
+                    <br><br>
+                    <textarea name="request" rows="10" cols="30">Tell us all about your special skills</textarea>
+                    <br><br>
         <input type="submit" value="Submit" />
         <footer class="clearfix">
 
-                    <p><span class="info">?</span><a href="#">Forgot Password</a></p>
+                    <p><span class="info"><-</span><a href="#">Go back</a></p>
 
                 </footer>'''
 
@@ -38,6 +55,12 @@ class MainHandler(webapp2.RequestHandler): #declaring a class
                 </fieldset>
 
     </div>
+
+    <footer style="text-align:center; color: #ffffff">
+        Made By Mohammad Khan using Python 2.7
+    </footer>
+    <br>
+
     </body>
 </html>
         '''
