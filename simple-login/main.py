@@ -18,12 +18,26 @@ class MainHandler(webapp2.RequestHandler): #declaring a class
     <body>'''
 
 
-        body = '''<form method="GET">
-        <label>Name:</label><input type="text" name="user" />
-        <label>Email:</label><input type="email" name="email" />
-        <input type="submit" value="Submit" />'''
+        body = '''    <div id="login-form">
+
+        <h1>Sign Up</h1>
+
+        <fieldset>
+        <form method="GET">
+        <input type="text" name="user" placeholder="Name" />
+        <input type="email" name="email" placeholder="Email"/>
+        <input type="submit" value="Submit" />
+        <footer class="clearfix">
+
+                    <p><span class="info">?</span><a href="#">Forgot Password</a></p>
+
+                </footer>'''
+
 
         footer = '''</form>
+                </fieldset>
+
+    </div>
     </body>
 </html>
         '''
