@@ -1,10 +1,13 @@
 '''
 Name: Mohammad Khan
-Class: DPW1507
+Class: DPW
 Assignment: Reusable Library
 '''
 
 import webapp2
+
+from pages import *
+from library import *
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
