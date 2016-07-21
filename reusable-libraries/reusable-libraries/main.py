@@ -11,12 +11,10 @@ from library import *
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        #song title
-        #artist
-        #length
-        #language
-        #song rating
-        #song link
+		
+		p = FormPage()
+
+		self.response.write(p.print_out())
 
 
 app = webapp2.WSGIApplication([
