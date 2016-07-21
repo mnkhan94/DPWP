@@ -11,7 +11,13 @@ from library import *
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        #song title
+        #artist
+        #length
+        #language
+        #song rating
+        #song link
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
