@@ -6,7 +6,7 @@ Assignment: Reusable Library
 
 import webapp2
 
-from pages import *
+from pages import FormPage, ResultsPage
 from library import *
 
 class MainHandler(webapp2.RequestHandler):
