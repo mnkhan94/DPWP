@@ -8,8 +8,18 @@ class FavoriteSongs(object):
     def compileList(self):
         output = ""
         for song in self.__song_list: #for eachs song in song array
-            output += "Title: " + song.title + "<br /><small>"+song.artist+"</small>"
+            output += "<a href="+song.link+">" + '"' + song.title + '"' + "</a><br /><small>"+song.artist+"</small><br />"+song.year+"<hr />"
         return output
+
+    def calc_time_span(self):
+        # calculat the time
+        # years
+        years = []
+        for song in self.__song_list:
+            years.append(song.year)
+
+        years.sort()
+        print years
 
 
 class Song(object): #Data Object
@@ -17,6 +27,7 @@ class Song(object): #Data Object
         self.__title = "" #Validate Title
         self.__artist = ""
         self.__rating = "" #Validate Rating
+        self.__year = "" #Validate Rating
         self.__genre = ""
         self.__link = ""
 
@@ -46,6 +57,15 @@ class Song(object): #Data Object
     @rating.setter
     def rating(self, y):
         self.__rating = y
+
+    # Song Year getter/setter
+    @property
+    def year(self):
+        return self.__year
+
+    @year.setter
+    def year(self, y):
+        self.__year = y
 
 
     # Song Artist getter/setter
