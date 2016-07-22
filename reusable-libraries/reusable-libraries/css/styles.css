@@ -19,6 +19,7 @@ body {
 	padding-top:50px;
 	padding-bottom:50px;
 	width: 450px;
+	border-radius: 25px;
 }
 
 .content-results {
@@ -50,7 +51,8 @@ input[type=text], input[type=number] {
 
 input:focus { 
     outline: none !important;
-    border-color: #15beb7;
+    border-color: #2ecc71 !important;
+    border: 2px solid;
 }
 
 h1, h3 {

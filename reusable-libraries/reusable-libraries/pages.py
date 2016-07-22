@@ -20,7 +20,7 @@ class FormPage(object):
             <input id="artist" type="text" placeholder="Artist:" name="artist"/><br>
             <input id ="genre" type="text" placeholder="Genre:" name="genre"/><br>
             <input id ="year" type="number" placeholder="Year Released:" name="year"/><br>
-            <input id ="rating" type="number" placeholder="Rating:" name="rating"/><br>
+            <input id ="rating" type="number" placeholder="Rating:" name="rating" min="1" max="5"/><br>
             <input id ="link" type="text" placeholder="Youtube Link:" name="link"/><br>
 
             <input id="submit" class="btn btn-blue" type="submit" value="Add Song" onclick="validateForm()" />
@@ -34,7 +34,6 @@ class FormPage(object):
     </body>
 </html>
                      """
-    # this is a printout function used to write html to the page.
 
     def print_out(self):
         all = self.__head + self.body + self.__error + self.__close

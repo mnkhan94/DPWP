@@ -11,11 +11,12 @@ class FavoriteSongs(object):
 
         output = ""
 
+        # Use this to sort by year and create a new list
         newlist = []
         for song in reversed(sorted(self.__song_list, key = attrgetter("year"))): #for eachs song in song array
             newlist.append(song)
 
-        for song in newlist: #for eachs song in song array
+        for song in newlist: #for eachs song in the sorted songs array
             output += "<div class='song'><a href="+song.link+">" + '"' + song.title + '"' + '</a><br /><iframe width="auto" height="auto" src="'+song.link.replace("watch?v=", "v/")+'" frameborder="0" allowfullscreen></iframe>' + "<br /><small>"+song.artist+"</small><br />"+song.year+"</div>"
         return output
 
@@ -33,11 +34,11 @@ class FavoriteSongs(object):
 class Song(object): #Data Object
     def __init__(self):
         self.__title = "" #Validate Title
-        self.__artist = ""
+        self.__artist = "" #Validate Artist
         self.__rating = "" #Validate Rating
-        self.__year = "" #Validate Rating
-        self.__genre = ""
-        self.__link = ""
+        self.__year = "" #Validate Year
+        self.__genre = "" #Validate Genre
+        self.__link = "" #Validate Link
 
     # Song Title getter/setter
     @property

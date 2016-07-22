@@ -17,7 +17,7 @@ class MainHandler(webapp2.RequestHandler):
 
         lib = FavoriteSongs()
 
-        # 
+        # Dummy Content
 
         s1 = Song()
         s1.title = "This is what you came for"
@@ -47,9 +47,9 @@ class MainHandler(webapp2.RequestHandler):
         lib.addSong(s3)
 
 
-        # 
+        # Dummy Content
 
-        # if a GET request is sent then get the right values and show results page
+        # if a GET request is sent then get the inputted values and show the songs list page
         if self.request.GET:
             song1 = Song()
             song1.title = self.request.GET['title']
