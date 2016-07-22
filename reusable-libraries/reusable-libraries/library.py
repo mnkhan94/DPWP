@@ -6,13 +6,21 @@ class FavoriteSongs(object):
         self.__song_list.append(m)
 
     def compileList(self):
+
+        from operator import attrgetter
+
         output = ""
-        for song in self.__song_list: #for eachs song in song array
-            output += "<a href="+song.link+">" + '"' + song.title + '"' + "</a><br /><small>"+song.artist+"</small><br />"+song.year+"<hr />"
+
+        newlist = []
+        for song in reversed(sorted(self.__song_list, key = attrgetter("year"))): #for eachs song in song array
+            newlist.append(song)
+
+        for song in newlist: #for eachs song in song array
+            output += "<div class='song'><a href="+song.link+">" + '"' + song.title + '"' + '</a><br /><iframe width="auto" height="auto" src="'+song.link.replace("watch?v=", "v/")+'" frameborder="0" allowfullscreen></iframe>' + "<br /><small>"+song.artist+"</small><br />"+song.year+"</div>"
         return output
 
     def calc_time_span(self):
-        # calculat the time
+        # calculate the time
         # years
         years = []
         for song in self.__song_list:

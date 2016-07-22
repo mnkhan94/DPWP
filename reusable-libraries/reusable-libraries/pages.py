@@ -53,11 +53,10 @@ class ResultsPage(object):
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-    <div class="content">
+    <div class="content-results">
         """
 
         self.body = """
-<h1>Hello World!</h1>
         """
 
         self.__close = """
