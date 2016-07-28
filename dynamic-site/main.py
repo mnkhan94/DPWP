@@ -14,11 +14,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import webapp2
+from data import *
+from pages import *
+from lib import *
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+
+        secure = WondersData()
+        compiler = DataCompiler()
+        compiler.config(secure.database)
+
+        if 'wonder' in self.request.GET:
+            compiler.collate(secure.auth(self.request.GET['wonder']))
+            display = WonderPage(compiler.store)
+
+        else:
+            display = LandingPage(compiler.store)
+
+        self.response.write(display.load())
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
