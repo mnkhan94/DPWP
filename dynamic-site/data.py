@@ -43,8 +43,19 @@ class WondersData(object):
             desciption[6]]
         ]
 
+
     @property
     def database(self):
         wonders = self.__database
         del wonders[0]
         return wonders
+
+
+    def auth(self, op):
+        op_data = {}
+        search = (ops for ops in self.__database if ops[0] == op).next()
+        i = 0
+        for key in self.__database[0]:
+            op_data[key] = search[i]
+            i += 1
+        return op_data
