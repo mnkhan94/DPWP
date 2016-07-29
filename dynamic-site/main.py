@@ -1,39 +1,34 @@
-#!/usr/bin/env python
-#
-# Copyright 2007 Google Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-
 import webapp2
 from data import *
-from pages import *
+from page import *
 from lib import *
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-
+        #Retrieve the 'Wonders' data from the WondersData() object
         secure = WondersData()
-        compiler = DataCompiler()
-        compiler.config(secure.database)
 
+        #Bring in the DataCompiler()
+        #This gives us the ability to compile the specific data needed at the moment.
+        compiler = DataCompiler()
+        compiler.config(secure.data)
+
+        #Using GET we will tell the compiler what specific data we need.
+
+        # If there is a GET request i.e. "?wonder=" in the browser, do this:
         if 'wonder' in self.request.GET:
             compiler.collate(secure.auth(self.request.GET['wonder']))
+
+            # compile the specific Wonder page with details
             display = WonderPage(compiler.store)
 
+        #If there is NO GET request, do this:
         else:
+
+            # Just compile the reguler landing page
             display = LandingPage(compiler.store)
 
+        #Print our compiled result
         self.response.write(display.load())
 
 app = webapp2.WSGIApplication([

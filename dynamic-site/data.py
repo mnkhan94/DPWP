@@ -1,63 +1,76 @@
 class WondersData(object):
+
+    # We are initiating the WondersData() object with two arrays.
     def __init__(self):
 
-        desciption = [
-            "Lorem Ipsum",
-            "Lorem Ipsum",
-            "Lorem Ipsum",
-            "Lorem Ipsum",
-            "Lorem Ipsum",
-            "Lorem Ipsum",
-            "Lorem Ipsum"
+        # This is the Description array which will hold the results page details.
+        description = [
+            ["Lorem Ipsum",
+               "Hello Youtuube"
+            ],
+            ["Lorem Ipsum",
+               ""
+            ],
+            ["Lorem Ipsum",
+               ""
+            ],
+            ["Lorem Ipsum",
+               ""
+            ],
+            ["Lorem Ipsum",
+               ""
+            ],
+            ["Lorem Ipsum",
+               ""
+            ],
+            ["Lorem Ipsum",
+               ""
+            ]
         ]
 
+        # This is the basic set of wonder details. We will be calling this upon launch.
         self.__database = [
-            ["local","location","image"],
+            ["title","name","image", "description"],
             ["The Great Wall of China",
                 "China",
                 "http://foundtheworld.com/wp-content/uploads/2014/10/Great-Wall-of-China-23.jpg",
-            desciption[0]],
+            description[0]],
             ["Christ The Redeemer",
                 "Rio de Janeiro, Brazil",
                 "https://upload.wikimedia.org/wikipedia/commons/a/ae/Christ_on_Corcovado_mountain.JPG",
-            desciption[1]],
+            description[1]],
             ["Machu Picchu",
                 "Peru",
                 "http://img0.mxstatic.com/wallpapers/310efc43714ea04445eea08c5f61700b_large.jpeg",
-            desciption[2]],
+            description[2]],
             ["Chichen Itza",
                 "Mexico",
                 "http://cheapvacationholiday.com/wp-content/uploads/2015/06/Chichen-Itza_date_11.jpg",
-            desciption[3]],
+            description[3]],
             ["Petra",
                 "Jordan",
                 "https://upload.wikimedia.org/wikipedia/commons/e/ed/Al_khazneh.jpg",
-            desciption[4]],
+            description[4]],
             ["Roman Colosseum",
                 "Rome, Italy",
                 "https://upload.wikimedia.org/wikipedia/commons/5/53/Colosseum_in_Rome,_Italy_-_April_2007.jpg",
-            desciption[5]],
+            description[5]],
             ["Taj Mahal",
                 "Agra, India",
                 "http://www.tajmahal.org.uk/gifs/taj-mahal.jpeg",
-            desciption[6]]
+            description[6]]
         ]
 
+    #This GETTER will cycle through the list of Wonders and set them to one neat and clean Array that holds eveything for us.
     @property
     def data(self):
         op_names = []
         for ops in self.__database:
-            op_names.append(ops[0])
+            op_names.append(ops)
         del op_names[0]
         return op_names
 
-    @property
-    def database(self):
-        wonders = self.__database
-        del wonders[0]
-        return wonders
-
-
+    #This Method takes tries finding the requested ky in the DB and returns it for our show page.
     def auth(self, op):
         op_data = {}
         search = (ops for ops in self.__database if ops[0] == op).next()

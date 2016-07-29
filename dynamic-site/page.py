@@ -2,6 +2,7 @@ class DefaultPage(object):
     def __init__(self):
         self.html = {}
         self.build = {}
+        #Create HTML dictionary and section out keys with all base HTML
         self.html['header'] = '''
 <!DOCTYPE html>
 <html lang="en">
@@ -27,20 +28,21 @@ class DefaultPage(object):
 </html>
 '''
 
+    #Combine all HTML in dictionary regardless of how many and format with passed dictionary
     def load(self):
         self.build_hook()
-        output = self.html['header'] + self.html['section'] + self.html['footer']
+        output = self.html['header'] +  self.html['section'] + self.html['footer']
         return output.format(**self.build)
 
     def build_hook(self):
         print "build_hook is not available in this module"
 
+#Inherit from default page and add new HTML keys to dictionary
 class LandingPage(DefaultPage):
     def __init__(self, pages):
         DefaultPage.__init__(self)
         self.pages = pages
-        self.html['navbar'] = '''
-'''
+
         self.html['section'] = '''
 <section class="intro">
       <div class="left">
@@ -89,16 +91,32 @@ class LandingPage(DefaultPage):
           </li>
 ''' % (page[0],page[0])
 
+
 class WonderPage(DefaultPage):
     def __init__(self, build):
         DefaultPage.__init__(self)
         self.build = build
-        html = self.html
         self.html['section'] = '''
-    <section>
-      <div class="">
-        <h1>Hello World!</h1>
-        <p>{title}</p>
+
+<section class="intro">
+    <div class="left">
+      <div>
+        <span><a href="/">Go Back</a></span>
+        <p>Youtube: {description[1]}</p>
+        <p>{description[0]}</p>
       </div>
-    </section>
+    </div>
+
+      <div class="slider">
+        <ul>
+<li style="background-image:url({image})">
+            <div class="center-y">
+            <p>{name}</p>
+<h3>{title}</h3>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+  </section>
 '''
