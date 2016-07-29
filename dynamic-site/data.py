@@ -12,7 +12,7 @@ class WondersData(object):
         ]
 
         self.__database = [
-            ["title","location","image"],
+            ["local","location","image"],
             ["The Great Wall of China",
                 "China",
                 "http://foundtheworld.com/wp-content/uploads/2014/10/Great-Wall-of-China-23.jpg",
@@ -43,6 +43,13 @@ class WondersData(object):
             desciption[6]]
         ]
 
+    @property
+    def data(self):
+        op_names = []
+        for ops in self.__database:
+            op_names.append(ops[0])
+        del op_names[0]
+        return op_names
 
     @property
     def database(self):

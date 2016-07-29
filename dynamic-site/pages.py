@@ -93,10 +93,12 @@ class WonderPage(DefaultPage):
     def __init__(self, build):
         DefaultPage.__init__(self)
         self.build = build
+        html = self.html
         self.html['section'] = '''
     <section>
       <div class="">
         <h1>Hello World!</h1>
+        <p>{title}</p>
       </div>
     </section>
 '''
