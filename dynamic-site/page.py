@@ -102,8 +102,9 @@ class WonderPage(DefaultPage):
     <div class="left">
       <div>
         <span><a href="/">Go Back</a></span>
-        <p>Youtube: {description[1]}</p>
         <p>{description[0]}</p>
+        <br>
+        <p>{description[1]}</p>
       </div>
     </div>
 

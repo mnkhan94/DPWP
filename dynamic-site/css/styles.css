@@ -78,15 +78,25 @@ p + a {
 	text-align: center;
 	color: #fff;
 }
+
+.center-y p {
+	background-color: #ffffff;
+	color: #000;
+}
+
 h3 {
 	font-size: 5rem;
 	font-style: italic;
+	background-color: #ffffff;
+	color: #000;
 }
 h3 + a {
 	font-size: 1.6rem;
 	display: inline-block;
-	color: #fff;
+	color: #000;
 	margin-top: 2rem;
+	background-color: #ffffff;
+	padding: 10px;
 }
 h3, h3 + a {
 	opacity: 0;
